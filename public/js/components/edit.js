@@ -7,6 +7,22 @@ import '../../css/edit.css';
 
 export default class Edit extends React.Component {
     handelClick() {
+        const title = this.state.title;
+        const text = this.state.text;
+        this.props.buttonClick();
+    }
+
+    handelContentChange(e) {
+        this.setState({
+            text: marked(e.target.value)
+        });
+
+    }
+
+    handelTitleChange(e) {
+        this.setState({
+            title: marked(e.target.value)
+        });
 
     }
 
