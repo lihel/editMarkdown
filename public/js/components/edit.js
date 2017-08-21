@@ -6,10 +6,18 @@ import marked from 'marked';
 import '../../css/edit.css';
 
 export default class Edit extends React.Component {
-    handelClick() {
+    constructor(props) {
+        super(props);
+        this.state = {
+            title:document.getElementsByClassName('editTitle').value,
+            text: document.getElementsByClassName('editText').value
+        }
+    }
+
+    handleClick() {
         const title = this.state.title;
         const text = this.state.text;
-        this.props.buttonClick();
+        this.props.buttonClick({title, text});
     }
 
     handelContentChange(e) {
@@ -29,13 +37,11 @@ export default class Edit extends React.Component {
     render() {
         return (
             <div>
-                <button
-                    onClick={this.handleClick.bind(this)}>发布
-                </button>
+                <button onClick={this.handleClick.bind(this)}>发布</button>
                 <div className="editArea">
                     <textarea className="editTitle" onChange={this.handelTitleChange.bind(this)} ref="title"/>
 
-                    <textarea className="edit" onChange={this.handelContentChange.bind(this)} ref='text'/>
+                    <textarea className="editText" onChange={this.handelContentChange.bind(this)} ref='text'/>
 
                 </div>
 

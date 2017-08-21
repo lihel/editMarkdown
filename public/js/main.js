@@ -6,17 +6,20 @@ import React from 'react';
 import reducer from './reducers/index';
 
 import middleHello from './middlewares/hello';
+import middleEdit from './middlewares/edit';
 
 
 import Hello from './containers/hello';
+import Edit from './containers/edit';
 
 
-const createMiddlewareStore = applyMiddleware(middleHello)(createStore);
+const createMiddlewareStore = applyMiddleware(middleHello,middleEdit)(createStore);
 
 const store = createMiddlewareStore(reducer);
 
 render(<Provider store={store}>
     <Router history={browserHistory}>
-        <Route path="/" component={Hello}/>
+        {/*<Route path="/" component={Hello}/>*/}
+        <Route path='/' component={Edit}/>
     </Router>
 </Provider>, document.getElementById("content"));
