@@ -4,7 +4,7 @@ const path = require('path');
 
 const bodyParser = require('body-parser');
 
-const hello = require('./server/routers/hello');
+// const hello = require('./server/routers/hello');
 const edit = require('./server/routers/edit');
 
 app.use(bodyParser.json());

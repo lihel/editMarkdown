@@ -5,6 +5,13 @@
 import {connect} from 'react-redux';
 import Edit from '../components/edit';
 
+function mapStateToProps(state) {
+    return{
+        submitSuccess : state.handleClick.submitSuccess
+    }
+
+}
+
 function mapDispatchToProps(dispatch){
     return{
         buttonClick: (editInfo) => {

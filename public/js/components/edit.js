@@ -16,9 +16,11 @@ export default class Edit extends React.Component {
         super(props);
         this.state = {
             title: document.getElementsByClassName('editTitle').value,
-            text: document.getElementsByClassName('editText').value
-        }
+            text: document.getElementsByClassName('editText').value,
+
     }
+    }
+
 
     handleClick() {
         const title = this.state.title;
