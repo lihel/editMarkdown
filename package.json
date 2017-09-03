@@ -8,7 +8,7 @@
     "start": "nodemon server.js",
     "webpack": "webpack -d --watch"
   },
-  "author": "",
+  "author": "lmy",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.24.0",
