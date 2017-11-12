@@ -10,7 +10,7 @@ let db = require('../dbs/connection');
 let editSQL = require('../dbs/editSQL');
 
 
-router.post('/delUser', (req, res) => {
+router.post('/delEdit', (req, res) => {
     db.query(editSQL.delete, req.body.id, function (err) {
         if (err) return res.status(500).json({tip: err.message});
         res.json({tip: "success"});
