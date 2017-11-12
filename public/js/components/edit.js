@@ -15,12 +15,12 @@ export default class Edit extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: null,
             title: document.getElementsByClassName('editTitle').value,
             text: document.getElementsByClassName('editText').value,
 
     }
     }
-
 
     handleClick() {
         const title = this.state.title;
@@ -50,6 +50,7 @@ export default class Edit extends React.Component {
                     <img src="../../images/photo.jpeg" width={60} height={50}/>
                     用户名
                     <button onClick={this.handleClick.bind(this)}>发布</button>
+                    <button>删除</button>
                 </div>
                 <div className="articlelist">
                     <p>我的文章</p>
